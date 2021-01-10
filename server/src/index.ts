@@ -15,6 +15,10 @@ import { GradeResolver } from "./Resolvers/GradeResolver";
     res.send("Educa Learning Management System Server")
   );
 
+  app.post("/refresh_token", ()=>{
+    
+  })
+
   await createConnection();
 
   const apolloServer = new ApolloServer({
