@@ -6,6 +6,8 @@ import { buildSchema } from "type-graphql";
 import { StudentResolver } from "./Resolvers/StudentResolver";
 import { createConnection } from "typeorm";
 import { TeacherResolver } from "./Resolvers/TeacherResolver";
+import { SubjectResolver } from "./Resolvers/SubjectResolver";
+import { GradeResolver } from "./Resolvers/GradeResolver";
 
 (async () => {
   const app = express();
@@ -17,7 +19,12 @@ import { TeacherResolver } from "./Resolvers/TeacherResolver";
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [StudentResolver, TeacherResolver],
+      resolvers: [
+        StudentResolver,
+        TeacherResolver,
+        SubjectResolver,
+        GradeResolver,
+      ],
     }),
     context: ({ req, res }) => ({ req, res }),
   });

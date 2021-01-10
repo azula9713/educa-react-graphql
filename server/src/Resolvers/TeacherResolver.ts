@@ -45,7 +45,7 @@ export class TeacherResolver {
     @Arg("lec_first_name", () => String) lec_first_name: string,
     @Arg("lec_last_name", () => String) lec_last_name: string,
     @Arg("lec_mobile", () => String) lec_mobile: string,
-    @Arg("lec_subject_id", () => Int) lec_subject_id: number
+    @Arg("sub_id", () => Int) sub_id: number
   ) {
     const hashedPassword = await hash(lec_password);
     try {
@@ -55,20 +55,14 @@ export class TeacherResolver {
         lec_first_name,
         lec_last_name,
         lec_mobile,
-        lec_subject_id,
+        sub_id,
         lec_reg_date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
       });
     } catch (err) {
       console.log(err);
     }
 
-    return [
-      lec_email,
-      lec_first_name,
-      lec_last_name,
-      lec_mobile,
-      lec_subject_id,
-    ];
+    return [lec_email, lec_first_name, lec_last_name, lec_mobile, sub_id];
   }
 
   @Mutation(() => LecLoginResponse)

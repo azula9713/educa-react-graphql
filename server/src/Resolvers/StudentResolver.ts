@@ -50,7 +50,8 @@ export class StudentResolver {
     @Arg("stu_first_name", () => String) stu_first_name: string,
     @Arg("stu_last_name", () => String) stu_last_name: string,
     @Arg("stu_mobile", () => String) stu_mobile: string,
-    @Arg("stu_grade_id", () => Int) stu_grade_id: number,
+    @Arg("grade_id", () => Int) grade_id: number,
+    @Arg("sub_id", () => Int) sub_id: number,
     @Arg("stu_is_approved", () => Boolean) stu_is_approved: boolean,
     @Arg("stu_is_allowed", () => Boolean) stu_is_allowed: boolean
   ) {
@@ -62,7 +63,8 @@ export class StudentResolver {
         stu_first_name,
         stu_last_name,
         stu_mobile,
-        stu_grade_id,
+        grade_id,
+        sub_id,
         stu_is_allowed,
         stu_is_approved,
         stu_reg_date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
@@ -76,7 +78,8 @@ export class StudentResolver {
       stu_first_name,
       stu_last_name,
       stu_mobile,
-      stu_grade_id,
+      grade_id,
+      sub_id,
       stu_is_allowed,
       stu_is_approved,
     ];

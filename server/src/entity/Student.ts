@@ -35,7 +35,11 @@ export class Student extends BaseEntity {
 
   @Field(() => Int)
   @Column()
-  stu_grade_id: number;
+  grade_id: number;
+
+  @Field(() => Int)
+  @Column()
+  sub_id: number;
 
   @Field()
   @Column()

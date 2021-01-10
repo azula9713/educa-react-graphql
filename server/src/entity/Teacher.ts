@@ -35,7 +35,7 @@ export class Teacher extends BaseEntity {
 
   @Field(() => Int)
   @Column()
-  lec_subject_id: number;
+  sub_id: number;
 
   @Field(() => Date)
   @Column({ type: "timestamp" })
